@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Steve Balalis - Lead Software Developer Resume</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Steve Balalis</h1>
+        <p>Lead Software Developer | Educator | AWS Enthusiast</p>
+    </header>
+    <!-- Sections omitted for brevity -->
+
+    <!-- Visitor Count Section -->
+    <p id="visitorCount">Visitor Count: Loading...</p>
+
+    <!-- Inline JavaScript -->
+    <script>
+        console.log("Script loaded");
+    
+        async function updateVisitorCount() {
+            try {
+                const response = await fetch('https://lw5xvpwn9k.execute-api.us-east-1.amazonaws.com/prod/count');
+                const data = await response.json();  // Handle initial JSON response
+                console.log("Entire Response:", data);  // Log the entire response object
+    
+                if (data.body) {
+                    const parsedBody = JSON.parse(data.body);
+                    console.log("Parsed Body:", parsedBody);
+                    document.getElementById('visitorCount').innerText = `Visitor Count: ${parsedBody.visitor_count}`;
+                } else {
+                    document.getElementById('visitorCount').innerText = `Visitor Count: ${data.visitor_count || "Undefined"}`;
+                }
+            } catch (error) {
+                console.error("Error fetching visitor count:", error);
+                document.getElementById('visitorCount').innerText = "Visitor Count: Error";
+            }
+        }
+    
+        window.onload = updateVisitorCount;
+    </script>
+</body>
+</html>
