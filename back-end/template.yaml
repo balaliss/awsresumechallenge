@@ -1,0 +1,21 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: A simple SAM application
+
+Resources:
+  MyLambdaFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: src.my_lambda_function.lambda_handler
+      Runtime: python3.9
+      CodeUri: src/
+      MemorySize: 128
+      Timeout: 3
+      Policies:
+        - AWSLambdaBasicExecutionRole
+      Events:
+        Api:
+          Type: Api
+          Properties:
+            Path: /hello
+            Method: get
