@@ -11,7 +11,101 @@
         <h1>Steve Balalis</h1>
         <p>Lead Software Developer | Educator | AWS Enthusiast</p>
     </header>
-    <!-- Sections omitted for brevity -->
+    <section>
+        <h2>Contact Information</h2>
+        <p>Email: [Redacted]</p>
+        <p>Website: <a href="http://sbwebdev.net" target="_blank">sbwebdev.net</a></p>
+        <p>Phone: [Redacted]</p>
+        <p>Location: [Redacted]</p>
+    </section>
+    <section>
+        <h2>Profile</h2>
+        <p>Proven, results-driven computer programming educator with extensive expertise in educational technology. Demonstrated proficiency in JavaScript, Python, Salesforce, React, Node, MongoDB, AWS, and Express. Adept at developing innovative curriculum and effectively managing classroom dynamics. Distinguished as Chapter President, showcasing a commitment to fostering educational excellence. Eager to leverage my leadership abilities and technical acumen in a challenging educational leadership position.</p>
+    </section>
+    <section>
+        <h2>Work Experience</h2>
+        <h3>Lead Computer Programming Instructor - Persevere Now</h3>
+        <p><em>11/2022 – Present | Nashville, USA</em></p>
+        <ul>
+            <li>Led a team of coding instructors, overseeing their professional development and ensuring the effective delivery of coding education.</li>
+            <li>Managed and enhanced the Learning Management System (LMS), implementing new features and ensuring smooth operation across local and cloud servers.</li>
+            <li>Developed and conducted professional development sessions for instructors, focusing on advanced coding techniques, effective teaching methodologies, and classroom management strategies.</li>
+            <li>Provided guidance and support to instructors on classroom management and teaching methods, ensuring an optimal learning environment for students.</li>
+            <li>Reviewed and evaluated student code projects, offering constructive feedback and ensuring adherence to best coding practices.</li>
+            <li>Spearheaded the development of comprehensive learning outcomes, contributing to a 38% increase in adult student job placements.</li>
+            <li>Established partnerships with government agencies, non-profits, and businesses, expanding the reach and quality of the Persevere Coding Program.</li>
+            <li>Acted as the primary liaison between the Information Security Team, IT Department, and Education Department, ensuring the successful completion of large-scale projects within established timelines.</li>
+        </ul>
+
+        <h3>Instrumental Music Teacher - Trenton Public School District</h3>
+        <p><em>09/2019 – 11/2022 | Trenton, USA</em></p>
+        <ul>
+            <li>Instructed K-5 students in instrumental music, fostering skill development in playing a variety of musical instruments and comprehension of music theory.</li>
+            <li>Developed and implemented engaging lesson plans and curriculum tailored to diverse learning styles, resulting in enhanced student performance and enthusiasm for music.</li>
+            <li>Organized and executed school concerts and musical events, showcasing students' talents and providing performance opportunities.</li>
+            <li>Collaborated with fellow educators to incorporate music education into school programs, improving student engagement and learning outcomes.</li>
+            <li>Monitored and evaluated student progress, delivering personalized feedback and support to promote musical growth and success.</li>
+            <li>Managed classroom dynamics proficiently, cultivating a positive and inclusive learning environment that encouraged student participation and creativity.</li>
+        </ul>
+
+        <h3>Pension Benefit Specialist - State of New Jersey</h3>
+        <p><em>08/2012 – 09/2019 | Trenton, USA</em></p>
+        <ul>
+            <li>Conducted statistical analysis and predictive modeling to identify trends and forecast future outcomes.</li>
+            <li>Collaborated with cross-functional teams to develop and implement data governance policies and ensure data integrity.</li>
+            <li>Provided training and support to team members on data analysis techniques and best practices.</li>
+            <li>Led data quality initiatives to improve the accuracy and reliability of data across the organization.</li>
+            <li>Presented findings and recommendations to senior management, contributing to strategic planning and policy development.</li>
+        </ul>
+    </section>
+    <section>
+        <h2>Education</h2>
+        <h3>Master of Science in Educational Technology</h3>
+        <p>Thomas Edison State University, 09/2020 – 10/2022 | Trenton, USA</p>
+
+        <h3>Bachelor of Science in Music Education</h3>
+        <p>Rutgers University, 09/2008 – 05/2012 | New Brunswick, USA</p>
+    </section>
+    <section>
+        <h2>Awards</h2>
+        <ul>
+            <li><strong>Teacher of the Year</strong> - Trenton Public School District, 06/2020</li>
+            <li><strong>Pension Benefit Specialist of the Month</strong> - New Jersey Division of Pensions and Benefits, 07/2017</li>
+        </ul>
+    </section>
+    <section>
+        <h2>Skills</h2>
+        <ul class="skills-grid">
+            <li>JavaScript</li>
+            <li>Python</li>
+            <li>TypeScript</li>
+            <li>React</li>
+            <li>Node</li>
+            <li>Express</li>
+            <li>MongoDB</li>
+            <li>Docker</li>
+            <li>AWS (S3, Lambda, DynamoDB, CloudFormation)</li>
+            <li>Curriculum Development</li>
+            <li>Classroom Management</li>
+            <li>Team Leadership</li>
+            <li>Instructional Design</li>
+        </ul>
+    </section>
+    <section>
+        <h2>Volunteering</h2>
+        <ul class="volunteer-list">
+            <li>
+                <h3>Chapter President - Sons of Pericles</h3>
+                <p><em>07/2016 – 06/2018 | Trenton, USA</em></p>
+                <ul>
+                    <li>Organized and led monthly volunteer events, resulting in a 20% increase in chapter participation over the course of one year.</li>
+                    <li>Developed and implemented a new fundraising strategy that raised $10,000 for local charities within the community.</li>
+                    <li>Collaborated with other chapter officers to create and execute a successful community service project, impacting over 500 individuals in need.</li>
+                    <li>Represented the chapter at regional conferences and networking events, establishing valuable partnerships with other organizations and community leaders.</li>
+                </ul>
+            </li>
+        </ul>
+    </section>
 
     <!-- Visitor Count Section -->
     <p id="visitorCount">Visitor Count: Loading...</p>
@@ -19,26 +113,26 @@
     <!-- Inline JavaScript -->
     <script>
         console.log("Script loaded");
-    
+
         async function updateVisitorCount() {
             try {
                 const response = await fetch('https://lw5xvpwn9k.execute-api.us-east-1.amazonaws.com/prod/count');
                 const data = await response.json();  // Handle initial JSON response
                 console.log("Entire Response:", data);  // Log the entire response object
-    
+
                 if (data.body) {
                     const parsedBody = JSON.parse(data.body);
                     console.log("Parsed Body:", parsedBody);
-                    document.getElementById('visitorCount').innerText = `Visitor Count: ${parsedBody.visitor_count}`;
+                    document.getElementById('visitorCount').innerText = parsedBody.visitor_count;
                 } else {
-                    document.getElementById('visitorCount').innerText = `Visitor Count: ${data.visitor_count || "Undefined"}`;
+                    document.getElementById('visitorCount').innerText = data.visitor_count || "Visitor Count: Undefined";
                 }
             } catch (error) {
                 console.error("Error fetching visitor count:", error);
                 document.getElementById('visitorCount').innerText = "Visitor Count: Error";
             }
         }
-    
+
         window.onload = updateVisitorCount;
     </script>
 </body>

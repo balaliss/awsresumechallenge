@@ -1,0 +1,139 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+*.egg-info/
+.dist/
+build/
+develop-eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg
+.installed.cfg
+*.egg-info/
+.installed.cfg
+*.manifest
+*.spec
+pip-wheel-metadata/
+share/python-wheels/
+*.log
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.coverage
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+nosetests.xml
+
+# Translations
+*.mo
+*.pot
+
+# Django/Flask related
+*.log
+local_settings.py
+instance/
+.webassets-cache
+
+# Scrapy stuff:
+.scrapy
+
+# Sphinx documentation
+docs/_build/
+target/
+
+# PyBuilder
+target/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# IPython
+profile_default/
+ipython_config.py
+
+# pyenv
+.python-version
+
+# Environments
+.env
+.venv
+ENV/
+env/
+venv/
+venv.bak/
+ENV.bak/
+.env.bak/
+ENV.bak/
+*.env
+
+# VS Code
+.vscode/
+.vscode/settings.json
+
+# Python virtual environment
+.venv/
+.env/
+Pipfile
+Pipfile.lock
+
+# AWS CLI credentials and config
+.aws/
+
+# Ignore SAM build and deployment artifacts
+.aws-sam/
+
+# MacOS-specific files
+.DS_Store
+
+# Thumbnails
+._*
+
+# Temporary files
+*.swp
+*.swo
+
+# Logs and local environment files
+*.log
+*.local
+.local/
+*.test.db
+test.db
+*.sqlite
+*.sqlite3
+
+# Terraform state files
+*.tfstate
+*.tfstate.*
+
+# Ignore Terraform files
+.terraform/
+
+# Secrets
+*.pem
+*.key
+*.cert
